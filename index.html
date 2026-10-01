@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Monitor de Impressoras</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+
+
+
+
+</head>
+
+
+<body>
+
+
+    <h1>Monitor de Impressoras</h1>
+
+
+    <div class="impressora">
+
+
+        <div class="cabecalho">
+
+            <h2>🖨️ Samsung SL-M4070FR</h2>
+
+            <p class="setor">
+                Setor: Compras
+            </p>
+
+            <p class="ip">
+                IP: 192.168.1.237
+            </p>
+
+        </div>
+
+
+        <div class="status" id="status">
+
+            ⚪ Não consultada
+
+        </div>
+
+
+        <div class="contador">
+
+            <span>Impressões</span>
+
+            <strong id="impressoes">-</strong>
+
+        </div>
+
+
+        <div class="contador">
+
+            <span>Cópias</span>
+
+            <strong id="copias">-</strong>
+
+        </div>
+
+
+        <div class="contador">
+
+            <span>Fax</span>
+
+            <strong id="fax">-</strong>
+
+        </div>
+
+
+        <div class="contador">
+
+            <span>Relatórios</span>
+
+            <strong id="relatorios">-</strong>
+
+        </div>
+
+
+        <hr>
+
+
+        <div class="contador total">
+
+            <span>TOTAL</span>
+
+            <strong id="total">-</strong>
+
+        </div>
+
+
+        <hr>
+
+
+        <div class="contador">
+
+            <span>Envio SMB</span>
+
+            <strong id="envioSMB">-</strong>
+
+        </div>
+
+
+        <div class="contador">
+
+            <span>Envio total</span>
+
+            <strong id="envioTotal">-</strong>
+
+        </div>
+
+
+        <hr>
+
+
+        <div class="contador">
+
+            <span>Serial</span>
+
+            <strong id="serial">-</strong>
+
+        </div>
+
+
+        <button onclick="testarSamsung()">
+
+            🔄 Atualizar
+
+        </button>
+
+        <button onclick="gerarPDF()">
+            📄 Gerar aferição PDF
+        </button>
+
+
+    </div>
+    <script src="static/js/py.js"></script>
+
+</body>
+
+</html>
