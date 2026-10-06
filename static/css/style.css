@@ -47,12 +47,20 @@ h1 {
     letter-spacing: -0.5px;
 }
 
+#lista-impressoras {
+    max-width: 1400px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
 
 /* ---------- CARD DA IMPRESSORA ---------- */
 
 .impressora {
     width: 100%;
-    max-width: 460px;
+    max-width: none;
 
     background: rgba(255, 255, 255, 0.95);
 

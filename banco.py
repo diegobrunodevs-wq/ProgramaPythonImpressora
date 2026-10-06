@@ -60,5 +60,3 @@ def salvar_afericao(dados):
     finally:
         conexao.close()
 
-if __name__ == "__main__":
-    salvar_afericao()

@@ -1,113 +1,111 @@
-async function testarSamsung() {
+async function consultarImpressora(impressoraId) {
 
-    const status = document.getElementById("status");
+    const status =
+        document.getElementById(`status-${impressoraId}`);
+
+    if (!status) {
+        console.error(
+            `Status da impressora não encontrado: ${impressoraId}`
+        );
+        return;
+    }
 
     status.textContent = "🟡 Consultando impressora...";
 
     try {
 
-        const resposta = await fetch("/teste/samsung");
-
-        const dados = await resposta.text();
-
-
-        function pegarCampo(nome) {
-
-            const regex = new RegExp(
-                nome + "\\s*:\\s*([^,\\n}]+)"
-            );
-
-            const encontrado = dados.match(regex);
-
-            if (!encontrado) {
-                return "N/D";
+        const resposta = await fetch(
+            `/api/impressoras/${impressoraId}`,
+            {
+                method: "GET",
+                cache: "no-store"
             }
+        );
 
-            return encontrado[1]
-                .trim()
-                .replace(/^"|"$/g, "");
+        if (!resposta.ok) {
+            throw new Error(
+                `Erro HTTP ${resposta.status}`
+            );
         }
 
-
-        const serial =
-            pegarCampo("GXI_SYS_SERIAL_NUM");
+        const dados = await resposta.json();
 
 
-        const impressoes =
-            pegarCampo("GXI_BILLING_PRINT_TOTAL_IMP_CNT");
+        document.getElementById(
+            `serial-${impressoraId}`
+        ).textContent =
+            dados.serial ?? "N/D";
 
 
-        const copias =
-            pegarCampo("GXI_BILLING_COPY_TOTAL_IMP_CNT");
+        document.getElementById(
+            `impressoes-${impressoraId}`
+        ).textContent =
+            formatarNumero(
+                dados.contador_impressao
+            );
 
 
-        const fax =
-            pegarCampo("GXI_BILLING_FAX_TOTAL_IMP_CNT");
+        document.getElementById(
+            `copias-${impressoraId}`
+        ).textContent =
+            formatarNumero(
+                dados.contador_copia
+            );
 
 
-        const relatorios =
-            pegarCampo("GXI_BILLING_REPORT_TOTAL_IMP_CNT");
+        document.getElementById(
+            `fax-${impressoraId}`
+        ).textContent =
+            formatarNumero(
+                dados.contador_fax
+            );
 
 
-        const total =
-            pegarCampo("GXI_BILLING_TOTAL_IMP_CNT");
+        document.getElementById(
+            `relatorios-${impressoraId}`
+        ).textContent =
+            formatarNumero(
+                dados.contador_relatorio
+            );
 
 
-        const envioSMB =
-            pegarCampo("GXI_BILLING_SEND_TO_SMB_CNT");
+        document.getElementById(
+            `total-${impressoraId}`
+        ).textContent =
+            formatarNumero(
+                dados.contador_total
+            );
 
 
-        const envioTotal =
-            pegarCampo("GXI_BILLING_SEND_TO_TOTAL_CNT");
+        document.getElementById(
+            `envioSMB-${impressoraId}`
+        ).textContent =
+            formatarNumero(
+                dados.envio_smb
+            );
 
 
-        document.getElementById("serial").textContent =
-            serial;
+        document.getElementById(
+            `envioTotal-${impressoraId}`
+        ).textContent =
+            formatarNumero(
+                dados.envio_total
+            );
 
 
-        document.getElementById("impressoes").textContent =
-            formatarNumero(impressoes);
-
-
-        document.getElementById("copias").textContent =
-            formatarNumero(copias);
-
-
-        document.getElementById("fax").textContent =
-            formatarNumero(fax);
-
-
-        document.getElementById("relatorios").textContent =
-            formatarNumero(relatorios);
-
-
-        document.getElementById("total").textContent =
-            formatarNumero(total);
-
-
-        document.getElementById("envioSMB").textContent =
-            formatarNumero(envioSMB);
-
-
-        document.getElementById("envioTotal").textContent =
-            formatarNumero(envioTotal);
-
-
-        status.textContent =
-            "🟢 ONLINE";
+        status.textContent = "🟢 ONLINE";
 
     }
-
 
     catch (erro) {
 
-        console.error(erro);
+        console.error(
+            `Erro ao consultar ${impressoraId}:`,
+            erro
+        );
 
-        status.textContent =
-            "🔴 OFFLINE";
-
+        status.textContent = "🔴 OFFLINE";
     }
-
 }
 
 
@@ -116,16 +114,17 @@ function formatarNumero(valor) {
     const numero = Number(valor);
 
     if (isNaN(numero)) {
-        return valor;
+        return valor ?? "N/D";
     }
 
     return numero.toLocaleString("pt-BR");
-
 }
 
 
-function gerarPDF() {
+function gerarPDF(impressoraId) {
 
-    window.open("/pdf/samsung", "_blank");
-
+    window.open(
+        `/pdf/${impressoraId}`,
+        "_blank"
+    );
 }

@@ -8,138 +8,778 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Monitor de Impressoras</title>
+
     <link rel="stylesheet" href="/static/css/style.css">
-
-
-
 
 </head>
 
-
 <body>
-
 
     <h1>Monitor de Impressoras</h1>
 
+    <div id="lista-impressoras">
 
-    <div class="impressora">
+        <!-- SAMSUNG M4020ND - MANUTENÇÃO -->
+        <div class="impressora">
 
+            <div class="cabecalho">
+                <h2>🖨️ Samsung SL-M4020ND</h2>
 
-        <div class="cabecalho">
+                <p class="setor">
+                    Setor: Manutenção
+                </p>
 
-            <h2>🖨️ Samsung SL-M4070FR</h2>
+                <p class="ip">
+                    IP: 192.168.0.46
+                </p>
+            </div>
 
-            <p class="setor">
-                Setor: Compras
-            </p>
+            <div class="status" id="status-samsung_m402_manutencao">
+                ⚪ Não consultada
+            </div>
 
-            <p class="ip">
-                IP: 192.168.1.237
-            </p>
+            <div class="contador">
+                <span>Impressões</span>
+                <strong id="impressoes-samsung_m402_manutencao">-</strong>
+            </div>
 
-        </div>
+            <div class="contador">
+                <span>Cópias</span>
+                <strong id="copias-samsung_m402_manutencao">-</strong>
+            </div>
 
+            <div class="contador">
+                <span>Fax</span>
+                <strong id="fax-samsung_m402_manutencao">-</strong>
+            </div>
 
-        <div class="status" id="status">
+            <div class="contador">
+                <span>Relatórios</span>
+                <strong id="relatorios-samsung_m402_manutencao">-</strong>
+            </div>
 
-            ⚪ Não consultada
+            <hr>
 
-        </div>
+            <div class="contador total">
+                <span>TOTAL</span>
+                <strong id="total-samsung_m402_manutencao">-</strong>
+            </div>
 
+            <hr>
 
-        <div class="contador">
+            <div class="contador">
+                <span>Envio SMB</span>
+                <strong id="envioSMB-samsung_m402_manutencao">-</strong>
+            </div>
 
-            <span>Impressões</span>
+            <div class="contador">
+                <span>Envio total</span>
+                <strong id="envioTotal-samsung_m402_manutencao">-</strong>
+            </div>
 
-            <strong id="impressoes">-</strong>
+            <hr>
 
-        </div>
+            <div class="contador">
+                <span>Serial</span>
+                <strong id="serial-samsung_m402_manutencao">-</strong>
+            </div>
 
+            <button onclick="consultarImpressora('samsung_m402_manutencao')">
+                🔄 Atualizar
+            </button>
 
-        <div class="contador">
-
-            <span>Cópias</span>
-
-            <strong id="copias">-</strong>
-
-        </div>
-
-
-        <div class="contador">
-
-            <span>Fax</span>
-
-            <strong id="fax">-</strong>
-
-        </div>
-
-
-        <div class="contador">
-
-            <span>Relatórios</span>
-
-            <strong id="relatorios">-</strong>
-
-        </div>
-
-
-        <hr>
-
-
-        <div class="contador total">
-
-            <span>TOTAL</span>
-
-            <strong id="total">-</strong>
-
-        </div>
-
-
-        <hr>
-
-
-        <div class="contador">
-
-            <span>Envio SMB</span>
-
-            <strong id="envioSMB">-</strong>
+            <button onclick="gerarPDF('samsung_m402_manutencao')">
+                📄 Gerar aferição PDF
+            </button>
 
         </div>
 
 
-        <div class="contador">
+        <!-- HP M276NW - ADM COLORIDA -->
+        <div class="impressora">
 
-            <span>Envio total</span>
+            <div class="cabecalho">
+                <h2>🖨️ HP LaserJet 200 colorMFP M276nw</h2>
 
-            <strong id="envioTotal">-</strong>
+                <p class="setor">
+                    Setor: ADM COLORIDA
+                </p>
+
+                <p class="ip">
+                    IP: 192.168.0.54
+                </p>
+            </div>
+
+            <div class="status" id="status-hp_m276_adm_colorida">
+                ⚪ Não consultada
+            </div>
+
+            <div class="contador">
+                <span>Impressões</span>
+                <strong id="impressoes-hp_m276_adm_colorida">-</strong>
+            </div>
+
+            <div class="contador">
+                <span>Cópias</span>
+                <strong id="copias-hp_m276_adm_colorida">-</strong>
+            </div>
+
+            <div class="contador">
+                <span>Fax</span>
+                <strong id="fax-hp_m276_adm_colorida">-</strong>
+            </div>
+
+            <div class="contador">
+                <span>Relatórios</span>
+                <strong id="relatorios-hp_m276_adm_colorida">-</strong>
+            </div>
+
+            <hr>
+
+            <div class="contador total">
+                <span>TOTAL</span>
+                <strong id="total-hp_m276_adm_colorida">-</strong>
+            </div>
+
+            <hr>
+
+            <div class="contador">
+                <span>Envio SMB</span>
+                <strong id="envioSMB-hp_m276_adm_colorida">-</strong>
+            </div>
+
+            <div class="contador">
+                <span>Envio total</span>
+                <strong id="envioTotal-hp_m276_adm_colorida">-</strong>
+            </div>
+
+            <hr>
+
+            <div class="contador">
+                <span>Serial</span>
+                <strong id="serial-hp_m276_adm_colorida">-</strong>
+            </div>
+
+            <button onclick="consultarImpressora('hp_m276_adm_colorida')">
+                🔄 Atualizar
+            </button>
+
+            <button onclick="gerarPDF('hp_m276_adm_colorida')">
+                📄 Gerar aferição PDF
+            </button>
 
         </div>
 
 
-        <hr>
+        <!-- SAMSUNG M4020ND - RHDP -->
+        <div class="impressora">
 
+            <div class="cabecalho">
+                <h2>🖨️ Samsung SL-M4020ND</h2>
 
-        <div class="contador">
+                <p class="setor">
+                    Setor: RHDP
+                </p>
 
-            <span>Serial</span>
+                <p class="ip">
+                    IP: 192.168.0.94
+                </p>
+            </div>
 
-            <strong id="serial">-</strong>
+            <div class="status" id="status-samsung_m402_rhdp">
+                ⚪ Não consultada
+            </div>
+
+            <div class="contador">
+                <span>Impressões</span>
+                <strong id="impressoes-samsung_m402_rhdp">-</strong>
+            </div>
+
+            <div class="contador">
+                <span>Cópias</span>
+                <strong id="copias-samsung_m402_rhdp">-</strong>
+            </div>
+
+            <div class="contador">
+                <span>Fax</span>
+                <strong id="fax-samsung_m402_rhdp">-</strong>
+            </div>
+
+            <div class="contador">
+                <span>Relatórios</span>
+                <strong id="relatorios-samsung_m402_rhdp">-</strong>
+            </div>
+
+            <hr>
+
+            <div class="contador total">
+                <span>TOTAL</span>
+                <strong id="total-samsung_m402_rhdp">-</strong>
+            </div>
+
+            <hr>
+
+            <div class="contador">
+                <span>Envio SMB</span>
+                <strong id="envioSMB-samsung_m402_rhdp">-</strong>
+            </div>
+
+            <div class="contador">
+                <span>Envio total</span>
+                <strong id="envioTotal-samsung_m402_rhdp">-</strong>
+            </div>
+
+            <hr>
+
+            <div class="contador">
+                <span>Serial</span>
+                <strong id="serial-samsung_m402_rhdp">-</strong>
+            </div>
+
+            <button onclick="consultarImpressora('samsung_m402_rhdp')">
+                🔄 Atualizar
+            </button>
+
+            <button onclick="gerarPDF('samsung_m402_rhdp')">
+                📄 Gerar aferição PDF
+            </button>
 
         </div>
 
 
-        <button onclick="testarSamsung()">
+        <!-- SAMSUNG M4020ND - FINANCEIRO -->
+        <div class="impressora">
 
-            🔄 Atualizar
+            <div class="cabecalho">
+                <h2>🖨️ Samsung SL-M4020ND</h2>
 
-        </button>
+                <p class="setor">
+                    Setor: Financeiro
+                </p>
 
-        <button onclick="gerarPDF()">
-            📄 Gerar aferição PDF
-        </button>
+                <p class="ip">
+                    IP: 192.168.0.237
+                </p>
+            </div>
 
+            <div class="status" id="status-samsung_m402_financeiro">
+                ⚪ Não consultada
+            </div>
+
+            <div class="contador">
+                <span>Impressões</span>
+                <strong id="impressoes-samsung_m402_financeiro">-</strong>
+            </div>
+
+            <div class="contador">
+                <span>Cópias</span>
+                <strong id="copias-samsung_m402_financeiro">-</strong>
+            </div>
+
+            <div class="contador">
+                <span>Fax</span>
+                <strong id="fax-samsung_m402_financeiro">-</strong>
+            </div>
+
+            <div class="contador">
+                <span>Relatórios</span>
+                <strong id="relatorios-samsung_m402_financeiro">-</strong>
+            </div>
+
+            <hr>
+
+            <div class="contador total">
+                <span>TOTAL</span>
+                <strong id="total-samsung_m402_financeiro">-</strong>
+            </div>
+
+            <hr>
+
+            <div class="contador">
+                <span>Envio SMB</span>
+                <strong id="envioSMB-samsung_m402_financeiro">-</strong>
+            </div>
+
+            <div class="contador">
+                <span>Envio total</span>
+                <strong id="envioTotal-samsung_m402_financeiro">-</strong>
+            </div>
+
+            <hr>
+
+            <div class="contador">
+                <span>Serial</span>
+                <strong id="serial-samsung_m402_financeiro">-</strong>
+            </div>
+
+            <button onclick="consultarImpressora('samsung_m402_financeiro')">
+                🔄 Atualizar
+            </button>
+
+            <button onclick="gerarPDF('samsung_m402_financeiro')">
+                📄 Gerar aferição PDF
+            </button>
+
+        </div>
+
+
+        <!-- RICOH MP2554 - ADM -->
+        <div class="impressora">
+
+            <div class="cabecalho">
+                <h2>🖨️ RICOH MP 2554</h2>
+
+                <p class="setor">
+                    Setor: ADM
+                </p>
+
+                <p class="ip">
+                    IP: 192.168.0.242
+                </p>
+            </div>
+
+            <div class="status" id="status-ricoh_mp2554_adm">
+                ⚪ Não consultada
+            </div>
+
+            <div class="contador">
+                <span>Impressões</span>
+                <strong id="impressoes-ricoh_mp2554_adm">-</strong>
+            </div>
+
+            <div class="contador">
+                <span>Cópias</span>
+                <strong id="copias-ricoh_mp2554_adm">-</strong>
+            </div>
+
+            <div class="contador">
+                <span>Fax</span>
+                <strong id="fax-ricoh_mp2554_adm">-</strong>
+            </div>
+
+            <div class="contador">
+                <span>Relatórios</span>
+                <strong id="relatorios-ricoh_mp2554_adm">-</strong>
+            </div>
+
+            <hr>
+
+            <div class="contador total">
+                <span>TOTAL</span>
+                <strong id="total-ricoh_mp2554_adm">-</strong>
+            </div>
+
+            <hr>
+
+            <div class="contador">
+                <span>Envio SMB</span>
+                <strong id="envioSMB-ricoh_mp2554_adm">-</strong>
+            </div>
+
+            <div class="contador">
+                <span>Envio total</span>
+                <strong id="envioTotal-ricoh_mp2554_adm">-</strong>
+            </div>
+
+            <hr>
+
+            <div class="contador">
+                <span>Serial</span>
+                <strong id="serial-ricoh_mp2554_adm">-</strong>
+            </div>
+
+            <button onclick="consultarImpressora('ricoh_mp2554_adm')">
+                🔄 Atualizar
+            </button>
+
+            <button onclick="gerarPDF('ricoh_mp2554_adm')">
+                📄 Gerar aferição PDF
+            </button>
+
+        </div>
+
+
+        <!-- RICOH MP2555 - PCP -->
+        <div class="impressora">
+
+            <div class="cabecalho">
+                <h2>🖨️ RICOH MP 2555</h2>
+
+                <p class="setor">
+                    Setor: PCP
+                </p>
+
+                <p class="ip">
+                    IP: 192.168.0.243
+                </p>
+            </div>
+
+            <div class="status" id="status-ricoh_mp2555_pcp">
+                ⚪ Não consultada
+            </div>
+
+            <div class="contador">
+                <span>Impressões</span>
+                <strong id="impressoes-ricoh_mp2555_pcp">-</strong>
+            </div>
+
+            <div class="contador">
+                <span>Cópias</span>
+                <strong id="copias-ricoh_mp2555_pcp">-</strong>
+            </div>
+
+            <div class="contador">
+                <span>Fax</span>
+                <strong id="fax-ricoh_mp2555_pcp">-</strong>
+            </div>
+
+            <div class="contador">
+                <span>Relatórios</span>
+                <strong id="relatorios-ricoh_mp2555_pcp">-</strong>
+            </div>
+
+            <hr>
+
+            <div class="contador total">
+                <span>TOTAL</span>
+                <strong id="total-ricoh_mp2555_pcp">-</strong>
+            </div>
+
+            <hr>
+
+            <div class="contador">
+                <span>Envio SMB</span>
+                <strong id="envioSMB-ricoh_mp2555_pcp">-</strong>
+            </div>
+
+            <div class="contador">
+                <span>Envio total</span>
+                <strong id="envioTotal-ricoh_mp2555_pcp">-</strong>
+            </div>
+
+            <hr>
+
+            <div class="contador">
+                <span>Serial</span>
+                <strong id="serial-ricoh_mp2555_pcp">-</strong>
+            </div>
+
+            <button onclick="consultarImpressora('ricoh_mp2555_pcp')">
+                🔄 Atualizar
+            </button>
+
+            <button onclick="gerarPDF('ricoh_mp2555_pcp')">
+                📄 Gerar aferição PDF
+            </button>
+
+        </div>
+
+
+        <!-- HP M425DN - EXPEDIÇÃO -->
+        <div class="impressora">
+
+            <div class="cabecalho">
+                <h2>🖨️ HP LaserJet 400 MFP M425dn</h2>
+
+                <p class="setor">
+                    Setor: Expedição
+                </p>
+
+                <p class="ip">
+                    IP: 192.168.0.244
+                </p>
+            </div>
+
+            <div class="status" id="status-hp_m425_expedicao">
+                ⚪ Não consultada
+            </div>
+
+            <div class="contador">
+                <span>Impressões</span>
+                <strong id="impressoes-hp_m425_expedicao">-</strong>
+            </div>
+
+            <div class="contador">
+                <span>Cópias</span>
+                <strong id="copias-hp_m425_expedicao">-</strong>
+            </div>
+
+            <div class="contador">
+                <span>Fax</span>
+                <strong id="fax-hp_m425_expedicao">-</strong>
+            </div>
+
+            <div class="contador">
+                <span>Relatórios</span>
+                <strong id="relatorios-hp_m425_expedicao">-</strong>
+            </div>
+
+            <hr>
+
+            <div class="contador total">
+                <span>TOTAL</span>
+                <strong id="total-hp_m425_expedicao">-</strong>
+            </div>
+
+            <hr>
+
+            <div class="contador">
+                <span>Envio SMB</span>
+                <strong id="envioSMB-hp_m425_expedicao">-</strong>
+            </div>
+
+            <div class="contador">
+                <span>Envio total</span>
+                <strong id="envioTotal-hp_m425_expedicao">-</strong>
+            </div>
+
+            <hr>
+
+            <div class="contador">
+                <span>Serial</span>
+                <strong id="serial-hp_m425_expedicao">-</strong>
+            </div>
+
+            <button onclick="consultarImpressora('hp_m425_expedicao')">
+                🔄 Atualizar
+            </button>
+
+            <button onclick="gerarPDF('hp_m425_expedicao')">
+                📄 Gerar aferição PDF
+            </button>
+
+        </div>
+
+
+        <!-- SAMSUNG M4070FR - SESMT -->
+        <div class="impressora">
+
+            <div class="cabecalho">
+                <h2>🖨️ Samsung SL-M4070FR</h2>
+
+                <p class="setor">
+                    Setor: SESMT
+                </p>
+
+                <p class="ip">
+                    IP: 192.168.0.247
+                </p>
+            </div>
+
+            <div class="status" id="status-samsung_m407_sesmt">
+                ⚪ Não consultada
+            </div>
+
+            <div class="contador">
+                <span>Impressões</span>
+                <strong id="impressoes-samsung_m407_sesmt">-</strong>
+            </div>
+
+            <div class="contador">
+                <span>Cópias</span>
+                <strong id="copias-samsung_m407_sesmt">-</strong>
+            </div>
+
+            <div class="contador">
+                <span>Fax</span>
+                <strong id="fax-samsung_m407_sesmt">-</strong>
+            </div>
+
+            <div class="contador">
+                <span>Relatórios</span>
+                <strong id="relatorios-samsung_m407_sesmt">-</strong>
+            </div>
+
+            <hr>
+
+            <div class="contador total">
+                <span>TOTAL</span>
+                <strong id="total-samsung_m407_sesmt">-</strong>
+            </div>
+
+            <hr>
+
+            <div class="contador">
+                <span>Envio SMB</span>
+                <strong id="envioSMB-samsung_m407_sesmt">-</strong>
+            </div>
+
+            <div class="contador">
+                <span>Envio total</span>
+                <strong id="envioTotal-samsung_m407_sesmt">-</strong>
+            </div>
+
+            <hr>
+
+            <div class="contador">
+                <span>Serial</span>
+                <strong id="serial-samsung_m407_sesmt">-</strong>
+            </div>
+
+            <button onclick="consultarImpressora('samsung_m407_sesmt')">
+                🔄 Atualizar
+            </button>
+
+            <button onclick="gerarPDF('samsung_m407_sesmt')">
+                📄 Gerar aferição PDF
+            </button>
+
+        </div>
+
+
+        <!-- SAMSUNG M4070FR - COMPRAS -->
+        <div class="impressora">
+
+            <div class="cabecalho">
+                <h2>🖨️ Samsung SL-M4070FR</h2>
+
+                <p class="setor">
+                    Setor: Compras
+                </p>
+
+                <p class="ip">
+                    IP: 192.168.1.237
+                </p>
+            </div>
+
+            <div class="status" id="status-samsung_m407_compras">
+                ⚪ Não consultada
+            </div>
+
+            <div class="contador">
+                <span>Impressões</span>
+                <strong id="impressoes-samsung_m407_compras">-</strong>
+            </div>
+
+            <div class="contador">
+                <span>Cópias</span>
+                <strong id="copias-samsung_m407_compras">-</strong>
+            </div>
+
+            <div class="contador">
+                <span>Fax</span>
+                <strong id="fax-samsung_m407_compras">-</strong>
+            </div>
+
+            <div class="contador">
+                <span>Relatórios</span>
+                <strong id="relatorios-samsung_m407_compras">-</strong>
+            </div>
+
+            <hr>
+
+            <div class="contador total">
+                <span>TOTAL</span>
+                <strong id="total-samsung_m407_compras">-</strong>
+            </div>
+
+            <hr>
+
+            <div class="contador">
+                <span>Envio SMB</span>
+                <strong id="envioSMB-samsung_m407_compras">-</strong>
+            </div>
+
+            <div class="contador">
+                <span>Envio total</span>
+                <strong id="envioTotal-samsung_m407_compras">-</strong>
+            </div>
+
+            <hr>
+
+            <div class="contador">
+                <span>Serial</span>
+                <strong id="serial-samsung_m407_compras">-</strong>
+            </div>
+
+            <button onclick="consultarImpressora('samsung_m407_compras')">
+                🔄 Atualizar
+            </button>
+
+            <button onclick="gerarPDF('samsung_m407_compras')">
+                📄 Gerar aferição PDF
+            </button>
+
+        </div>
+
+
+        <!-- RICOH MP2555 - WEB IMAGE MONITOR -->
+        <div class="impressora">
+
+            <div class="cabecalho">
+                <h2>🖨️ RICOH MP 2555</h2>
+
+                <p class="setor">
+                    Setor: Não definido
+                </p>
+
+                <p class="ip">
+                    IP: 192.168.10.200
+                </p>
+            </div>
+
+            <div class="status" id="status-ricoh_mp2555_web">
+                ⚪ Não consultada
+            </div>
+
+            <div class="contador">
+                <span>Impressões</span>
+                <strong id="impressoes-ricoh_mp2555_web">-</strong>
+            </div>
+
+            <div class="contador">
+                <span>Cópias</span>
+                <strong id="copias-ricoh_mp2555_web">-</strong>
+            </div>
+
+            <div class="contador">
+                <span>Fax</span>
+                <strong id="fax-ricoh_mp2555_web">-</strong>
+            </div>
+
+            <div class="contador">
+                <span>Relatórios</span>
+                <strong id="relatorios-ricoh_mp2555_web">-</strong>
+            </div>
+
+            <hr>
+
+            <div class="contador total">
+                <span>TOTAL</span>
+                <strong id="total-ricoh_mp2555_web">-</strong>
+            </div>
+
+            <hr>
+
+            <div class="contador">
+                <span>Envio SMB</span>
+                <strong id="envioSMB-ricoh_mp2555_web">-</strong>
+            </div>
+
+            <div class="contador">
+                <span>Envio total</span>
+                <strong id="envioTotal-ricoh_mp2555_web">-</strong>
+            </div>
+
+            <hr>
+
+            <div class="contador">
+                <span>Serial</span>
+                <strong id="serial-ricoh_mp2555_web">-</strong>
+            </div>
+
+            <button onclick="consultarImpressora('ricoh_mp2555_web')">
+                🔄 Atualizar
+            </button>
+
+            <button onclick="gerarPDF('ricoh_mp2555_web')">
+                📄 Gerar aferição PDF
+            </button>
+
+        </div>
 
     </div>
+
     <script src="static/js/py.js"></script>
 
 </body>
