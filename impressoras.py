@@ -4,7 +4,7 @@ IMPRESSORAS = [
         "id": "samsung_m402_manutencao",
         "nome": "Samsung SL-M4020ND",
         "setor": "Manutenção",
-        "ip": "192.168.0.46",
+        "ip": "000.000.0.00",
         "fabricante": "Samsung"
     },
 
@@ -12,7 +12,7 @@ IMPRESSORAS = [
         "id": "hp_m276_adm_colorida",
         "nome": "HP LaserJet 200 colorMFP M276nw",
         "setor": "ADM COLORIDA",
-        "ip": "192.168.0.54",
+        "ip": "000.000.0.00",
         "fabricante": "HP"
     },
 
@@ -20,7 +20,7 @@ IMPRESSORAS = [
         "id": "samsung_m402_rhdp",
         "nome": "Samsung SL-M4020ND",
         "setor": "RHDP",
-        "ip": "192.168.0.94",
+        "ip": "1000.000.0.00",
         "fabricante": "Samsung"
     },
 
@@ -28,7 +28,7 @@ IMPRESSORAS = [
         "id": "samsung_m402_financeiro",
         "nome": "Samsung SL-M4020ND",
         "setor": "Financeiro",
-        "ip": "192.168.0.237",
+        "ip": "000.000.0.00",
         "fabricante": "Samsung"
     },
 
@@ -36,7 +36,7 @@ IMPRESSORAS = [
         "id": "ricoh_mp2554_adm",
         "nome": "RICOH MP 2554",
         "setor": "ADM",
-        "ip": "192.168.0.242",
+        "ip": "1000.000.0.00",
         "fabricante": "Ricoh"
     },
 
@@ -44,7 +44,7 @@ IMPRESSORAS = [
         "id": "ricoh_mp2555_pcp",
         "nome": "RICOH MP 2555",
         "setor": "PCP",
-        "ip": "192.168.0.243",
+        "ip": "192000.000.0.00",
         "fabricante": "Ricoh"
     },
 
@@ -52,7 +52,7 @@ IMPRESSORAS = [
         "id": "hp_m425_expedicao",
         "nome": "HP LaserJet 400 MFP M425dn",
         "setor": "Expedição",
-        "ip": "192.168.0.244",
+        "ip": "000.000.0.00",
         "fabricante": "HP"
     },
 
@@ -60,7 +60,7 @@ IMPRESSORAS = [
         "id": "samsung_m407_sesmt",
         "nome": "Samsung SL-M4070FR",
         "setor": "SESMT",
-        "ip": "192.168.0.247",
+        "ip": "000.000.0.00",
         "fabricante": "Samsung"
     },
 
@@ -68,7 +68,7 @@ IMPRESSORAS = [
         "id": "samsung_m407_compras",
         "nome": "Samsung SL-M4070FR",
         "setor": "Compras",
-        "ip": "192.168.1.237",
+        "ip": "000.000.0.00",
         "fabricante": "Samsung"
     },
 
@@ -76,7 +76,7 @@ IMPRESSORAS = [
         "id": "ricoh_mp2555_web",
         "nome": "RICOH MP 2555",
         "setor": "Não definido",
-        "ip": "192.168.10.200",
+        "ip": "000.000.0.00",
         "fabricante": "Ricoh"
     }
 
